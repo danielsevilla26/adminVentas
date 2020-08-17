@@ -4,4 +4,17 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AdminVentas.Application.Contracts\AdminVentas.Application.Contracts.csproj" />
+    <ProjectReference Include="..\AdminVentas.Application\AdminVentas.Application.csproj" />
+    <ProjectReference Include="..\AdminVentas.DataAccess.Contracts\AdminVentas.DataAccess.Contracts.csproj" />
+    <ProjectReference Include="..\AdminVentas.DataAccess\AdminVentas.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AdminVentas.CrossCutting.Register;
 using AdminVentas.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,8 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace Sevilla_AdminVentas.Api
 {
@@ -26,8 +21,13 @@ namespace Sevilla_AdminVentas.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Se agrega la connection string que apunta al servidor DB
-            services.AddDbContext<AdminVentasDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DataBaseConnection")));
+            //Se obtiene la connection string que apunta a la DB
+            string connectionString = Configuration.GetConnectionString("DataBaseConnection");
+            services.AddDbContext<BDGestorVentasContext>(options => 
+            options.UseSqlServer(connectionString, b => b.MigrationsAssembly("Sevilla-AdminVentas.Api")));
+
+            IOCRegister.AddRegistration(services);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

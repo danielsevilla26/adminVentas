@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdminVentas.CrossCutting\AdminVentas.CrossCutting.csproj" />
     <ProjectReference Include="..\AdminVentas.DataAccess\AdminVentas.DataAccess.csproj" />
   </ItemGroup>
 
