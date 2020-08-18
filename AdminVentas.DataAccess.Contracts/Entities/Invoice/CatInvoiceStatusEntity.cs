@@ -2,16 +2,16 @@
 
 namespace AdminVentas.DataAccess.Contracts.Entities.Invoice
 {
-    public partial class CatAmbitType
+    public partial class CatInvoiceStatusEntity
     {
-        public CatAmbitType()
+        public CatInvoiceStatusEntity()
         {
-            Tax = new HashSet<Tax>();
+            Invoice = new HashSet<InvoiceEntity>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<Tax> Tax { get; set; }
+        public ICollection<InvoiceEntity> Invoice { get; set; }
     }
 }

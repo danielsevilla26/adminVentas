@@ -23,7 +23,7 @@ namespace AdminVentas.DataAccess.Repositories
             _bdGestorVentasContext = bdGestorVentasContext;
         }
 
-        public async Task<User> AddAsync(User entity)
+        public async Task<UserEntity> AddAsync(UserEntity entity)
         {
             await _bdGestorVentasContext.User.AddAsync(entity);
 
@@ -33,7 +33,7 @@ namespace AdminVentas.DataAccess.Repositories
 
         }
 
-        public async Task<User> Update(User entity)
+        public async Task<UserEntity> Update(UserEntity entity)
         {
             var updateEntity = _bdGestorVentasContext.User.Update(entity);
 
@@ -42,7 +42,7 @@ namespace AdminVentas.DataAccess.Repositories
             return updateEntity.Entity;
         }
 
-        public async Task<User> Update(int idEntity, int isActive)
+        public async Task<UserEntity> Update(int idEntity, int isActive)
         {
             var entity = await Get(idEntity);
             entity.StatusId = isActive;
@@ -54,7 +54,7 @@ namespace AdminVentas.DataAccess.Repositories
             return entity;
         }
 
-        public async Task<User> Get(int idEntity)
+        public async Task<UserEntity> Get(int idEntity)
         {
             var result = await _bdGestorVentasContext.User.FirstOrDefaultAsync(x => x.Id == idEntity);
 
@@ -70,9 +70,9 @@ namespace AdminVentas.DataAccess.Repositories
             await _bdGestorVentasContext.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<UserEntity>> GetAll()
         {
-            throw new NotImplementedException();
+            return  _bdGestorVentasContext.User.Select(x => x);
         }
     }
 }

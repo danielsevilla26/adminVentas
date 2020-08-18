@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace AdminVentas.DataAccess.Contracts.Entities.Invoice
 {
-    public partial class Product
+    public partial class ProductEntity
     {
-        public Product()
+        public ProductEntity()
         {
-            Product2Tax = new HashSet<Product2Tax>();
+            Product2Tax = new HashSet<Product2TaxEntity>();
         }
 
         public int Id { get; set; }
@@ -21,6 +21,6 @@ namespace AdminVentas.DataAccess.Contracts.Entities.Invoice
         public int StatusId { get; set; }
         public DateTime CreateDate { get; set; }
 
-        public ICollection<Product2Tax> Product2Tax { get; set; }
+        public ICollection<Product2TaxEntity> Product2Tax { get; set; }
     }
 }

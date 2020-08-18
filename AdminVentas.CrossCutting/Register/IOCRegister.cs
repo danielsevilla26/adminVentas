@@ -13,6 +13,7 @@ namespace AdminVentas.CrossCutting.Register
     {
         public static IServiceCollection AddRegistration(IServiceCollection dependence)
         {
+            AddRegisterServices(dependence);
             AddRegisterRepositories(dependence);
 
             return dependence;
@@ -25,7 +26,7 @@ namespace AdminVentas.CrossCutting.Register
         /// <returns>Devuelve los servicios</returns>
         private static IServiceCollection AddRegisterServices(IServiceCollection services)
         {
-            //services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserService, UserService>();
 
             return services;
         }

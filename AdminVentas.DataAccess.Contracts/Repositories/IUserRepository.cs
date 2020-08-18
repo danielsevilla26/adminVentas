@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AdminVentas.DataAccess.Contracts.Repositories
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IRepository<UserEntity>
     {
-        Task<User> Update(int idEntity, int isActive);
+        Task<UserEntity> Update(int idEntity, int isActive);
     }
 }

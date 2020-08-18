@@ -5,14 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mappers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdminVentas.Business\AdminVentas.Business.csproj" />
     <ProjectReference Include="..\AdminVentas.DataAccess.Contracts\AdminVentas.DataAccess.Contracts.csproj" />
   </ItemGroup>
 

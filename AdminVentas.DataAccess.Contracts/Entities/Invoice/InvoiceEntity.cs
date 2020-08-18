@@ -2,7 +2,7 @@
 
 namespace AdminVentas.DataAccess.Contracts.Entities.Invoice
 {
-    public partial class Invoice
+    public partial class InvoiceEntity
     {
         public int Id { get; set; }
         public byte[] Uuid { get; set; }
@@ -15,8 +15,8 @@ namespace AdminVentas.DataAccess.Contracts.Entities.Invoice
         public int StatusId { get; set; }
         public DateTime CreateDate { get; set; }
 
-        public CatInvoiceStatus Status { get; set; }
-        public CatInvoiceType Type { get; set; }
-        public User User { get; set; }
+        public CatInvoiceStatusEntity Status { get; set; }
+        public CatInvoiceTypeEntity Type { get; set; }
+        public UserEntity User { get; set; }
     }
 }

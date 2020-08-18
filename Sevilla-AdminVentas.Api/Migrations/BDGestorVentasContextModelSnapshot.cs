@@ -19,7 +19,7 @@ namespace SevillaAdminVentas.Api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatAmbitType", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatAmbitTypeEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,10 +32,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CatAmbitType");
+                    b.ToTable("CatAmbitTypeEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatInvoiceStatus", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatInvoiceStatusEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,10 +48,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CatInvoiceStatus");
+                    b.ToTable("CatInvoiceStatusEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatInvoiceType", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatInvoiceTypeEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,10 +64,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CatInvoiceType");
+                    b.ToTable("CatInvoiceTypeEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatStatus", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatStatusEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,10 +80,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CatStatus");
+                    b.ToTable("CatStatusEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatTaxType", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatTaxTypeEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,10 +96,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CatTaxType");
+                    b.ToTable("CatTaxTypeEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Customer", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CustomerEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -153,10 +153,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Customer");
+                    b.ToTable("CustomerEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Invoice", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.InvoiceEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -201,10 +201,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Invoice");
+                    b.ToTable("InvoiceEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Product", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.ProductEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -248,10 +248,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("ProductEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Product2Tax", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.Product2TaxEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -267,10 +267,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasIndex("TaxId");
 
-                    b.ToTable("Product2Tax");
+                    b.ToTable("Product2TaxEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Tax", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.TaxEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -320,10 +320,10 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Tax");
+                    b.ToTable("TaxEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.User", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.UserEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -348,80 +348,80 @@ namespace SevillaAdminVentas.Api.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("User");
+                    b.ToTable("UserEntity");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Customer", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CustomerEntity", b =>
                 {
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatStatus", "Status")
-                        .WithMany("Customer")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatStatusEntity", "Status")
+                        .WithMany("CustomerEntity")
                         .HasForeignKey("StatusId")
                         .HasConstraintName("FK_Customer_CatStatus");
 
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.User", "User")
-                        .WithMany("Customer")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.UserEntity", "UserEntity")
+                        .WithMany("CustomerEntity")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_Customer_User");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Invoice", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.InvoiceEntity", b =>
                 {
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatInvoiceStatus", "Status")
-                        .WithMany("Invoice")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatInvoiceStatusEntity", "Status")
+                        .WithMany("InvoiceEntity")
                         .HasForeignKey("StatusId")
                         .HasConstraintName("FK_Invoice_CatStatusInvoice");
 
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatInvoiceType", "Type")
-                        .WithMany("Invoice")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatInvoiceTypeEntity", "Type")
+                        .WithMany("InvoiceEntity")
                         .HasForeignKey("TypeId")
                         .HasConstraintName("FK_Invoice_CatTypeInvoice");
 
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.User", "User")
-                        .WithMany("Invoice")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.UserEntity", "UserEntity")
+                        .WithMany("InvoiceEntity")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_Invoice_User");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Product2Tax", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.Product2TaxEntity", b =>
                 {
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.Product", "Product")
-                        .WithMany("Product2Tax")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.ProductEntity", "ProductEntity")
+                        .WithMany("Product2TaxEntity")
                         .HasForeignKey("ProductId")
                         .HasConstraintName("FK_Invoice2Tax_Product");
 
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.Tax", "Tax")
-                        .WithMany("Product2Tax")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.TaxEntity", "TaxEntity")
+                        .WithMany("Product2TaxEntity")
                         .HasForeignKey("TaxId")
                         .HasConstraintName("FK_Invoice2Tax_Tax");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.Tax", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.TaxEntity", b =>
                 {
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatStatus", "Status")
-                        .WithMany("Tax")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatStatusEntity", "Status")
+                        .WithMany("TaxEntity")
                         .HasForeignKey("StatusId")
                         .HasConstraintName("FK_Tax_CatStatus");
 
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatAmbitType", "TypeAmbit")
-                        .WithMany("Tax")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatAmbitTypeEntity", "TypeAmbit")
+                        .WithMany("TaxEntity")
                         .HasForeignKey("TypeAmbitId")
                         .HasConstraintName("FK_Tax_CatAmbitType");
 
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatTaxType", "Type")
-                        .WithMany("Tax")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatTaxTypeEntity", "Type")
+                        .WithMany("TaxEntity")
                         .HasForeignKey("TypeId")
                         .HasConstraintName("FK_Tax_CatTaxType");
 
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.User", "User")
-                        .WithMany("Tax")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.UserEntity", "UserEntity")
+                        .WithMany("TaxEntity")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_Tax_User");
                 });
 
-            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.Invoice.User", b =>
+            modelBuilder.Entity("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.UserEntity", b =>
                 {
-                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.Invoice.CatStatus", "Status")
-                        .WithMany("User")
+                    b.HasOne("AdminVentas.DataAccess.Contracts.Entities.InvoiceEntity.CatStatusEntity", "Status")
+                        .WithMany("UserEntity")
                         .HasForeignKey("StatusId")
                         .HasConstraintName("FK_User_CatStatus");
                 });

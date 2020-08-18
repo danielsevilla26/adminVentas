@@ -9,7 +9,7 @@ namespace SevillaAdminVentas.Api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CatAmbitType",
+                name: "CatAmbitTypeEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -22,7 +22,7 @@ namespace SevillaAdminVentas.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CatInvoiceStatus",
+                name: "CatInvoiceStatusEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -35,7 +35,7 @@ namespace SevillaAdminVentas.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CatInvoiceType",
+                name: "CatInvoiceTypeEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -48,7 +48,7 @@ namespace SevillaAdminVentas.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CatStatus",
+                name: "CatStatusEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -61,7 +61,7 @@ namespace SevillaAdminVentas.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CatTaxType",
+                name: "CatTaxTypeEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -74,7 +74,7 @@ namespace SevillaAdminVentas.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Product",
+                name: "ProductEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -95,7 +95,7 @@ namespace SevillaAdminVentas.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "UserEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -111,13 +111,13 @@ namespace SevillaAdminVentas.Api.Migrations
                     table.ForeignKey(
                         name: "FK_User_CatStatus",
                         column: x => x.StatusId,
-                        principalTable: "CatStatus",
+                        principalTable: "CatStatusEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customer",
+                name: "CustomerEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -140,19 +140,19 @@ namespace SevillaAdminVentas.Api.Migrations
                     table.ForeignKey(
                         name: "FK_Customer_CatStatus",
                         column: x => x.StatusID,
-                        principalTable: "CatStatus",
+                        principalTable: "CatStatusEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Customer_User",
                         column: x => x.UserID,
-                        principalTable: "User",
+                        principalTable: "UserEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Invoice",
+                name: "InvoiceEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -173,25 +173,25 @@ namespace SevillaAdminVentas.Api.Migrations
                     table.ForeignKey(
                         name: "FK_Invoice_CatStatusInvoice",
                         column: x => x.StatusId,
-                        principalTable: "CatInvoiceStatus",
+                        principalTable: "CatInvoiceStatusEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Invoice_CatTypeInvoice",
                         column: x => x.TypeID,
-                        principalTable: "CatInvoiceType",
+                        principalTable: "CatInvoiceTypeEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Invoice_User",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "UserEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tax",
+                name: "TaxEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -213,31 +213,31 @@ namespace SevillaAdminVentas.Api.Migrations
                     table.ForeignKey(
                         name: "FK_Tax_CatStatus",
                         column: x => x.StatusId,
-                        principalTable: "CatStatus",
+                        principalTable: "CatStatusEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Tax_CatAmbitType",
                         column: x => x.TypeAmbitId,
-                        principalTable: "CatAmbitType",
+                        principalTable: "CatAmbitTypeEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Tax_CatTaxType",
                         column: x => x.TypeId,
-                        principalTable: "CatTaxType",
+                        principalTable: "CatTaxTypeEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Tax_User",
                         column: x => x.UserId,
-                        principalTable: "User",
+                        principalTable: "UserEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Product2Tax",
+                name: "Product2TaxEntity",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -251,112 +251,112 @@ namespace SevillaAdminVentas.Api.Migrations
                     table.ForeignKey(
                         name: "FK_Invoice2Tax_Product",
                         column: x => x.ProductId,
-                        principalTable: "Product",
+                        principalTable: "ProductEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Invoice2Tax_Tax",
                         column: x => x.TaxId,
-                        principalTable: "Tax",
+                        principalTable: "TaxEntity",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customer_StatusID",
-                table: "Customer",
+                table: "CustomerEntity",
                 column: "StatusID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customer_UserID",
-                table: "Customer",
+                table: "CustomerEntity",
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Invoice_StatusId",
-                table: "Invoice",
+                table: "InvoiceEntity",
                 column: "StatusId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Invoice_TypeID",
-                table: "Invoice",
+                table: "InvoiceEntity",
                 column: "TypeID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Invoice_UserId",
-                table: "Invoice",
+                table: "InvoiceEntity",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Product2Tax_ProductId",
-                table: "Product2Tax",
+                table: "Product2TaxEntity",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Product2Tax_TaxId",
-                table: "Product2Tax",
+                table: "Product2TaxEntity",
                 column: "TaxId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tax_StatusId",
-                table: "Tax",
+                table: "TaxEntity",
                 column: "StatusId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tax_TypeAmbitId",
-                table: "Tax",
+                table: "TaxEntity",
                 column: "TypeAmbitId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tax_TypeId",
-                table: "Tax",
+                table: "TaxEntity",
                 column: "TypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tax_UserId",
-                table: "Tax",
+                table: "TaxEntity",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_User_StatusId",
-                table: "User",
+                table: "UserEntity",
                 column: "StatusId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customer");
+                name: "CustomerEntity");
 
             migrationBuilder.DropTable(
-                name: "Invoice");
+                name: "InvoiceEntity");
 
             migrationBuilder.DropTable(
-                name: "Product2Tax");
+                name: "Product2TaxEntity");
 
             migrationBuilder.DropTable(
-                name: "CatInvoiceStatus");
+                name: "CatInvoiceStatusEntity");
 
             migrationBuilder.DropTable(
-                name: "CatInvoiceType");
+                name: "CatInvoiceTypeEntity");
 
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "ProductEntity");
 
             migrationBuilder.DropTable(
-                name: "Tax");
+                name: "TaxEntity");
 
             migrationBuilder.DropTable(
-                name: "CatAmbitType");
+                name: "CatAmbitTypeEntity");
 
             migrationBuilder.DropTable(
-                name: "CatTaxType");
+                name: "CatTaxTypeEntity");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "UserEntity");
 
             migrationBuilder.DropTable(
-                name: "CatStatus");
+                name: "CatStatusEntity");
         }
     }
 }

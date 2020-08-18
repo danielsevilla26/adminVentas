@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sevilla-AdminVentas.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Sevilla_AdminVentas.Api.Config.SwaggerConfig.AddRegistration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Método que se encarga de configurar los servicios
+            </summary>
+            <param name="services">Servicio a configurar</param>
+            <returns>Devuelve el servicio configurado</returns>
+        </member>
+        <member name="M:Sevilla_AdminVentas.Api.Controllers.UserController.#ctor(AdminVentas.Application.Contracts.Services.IUserService)">
+            <summary>
+            Constructor que inyecta el servicio
+            </summary>
+            <param name="userService"></param>
+        </member>
+    </members>
+</doc>

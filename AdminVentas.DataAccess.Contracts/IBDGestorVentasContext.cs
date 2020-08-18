@@ -10,27 +10,27 @@ namespace AdminVentas.DataAccess.Contracts
 {
     public interface IBDGestorVentasContext
     {
-        DbSet<User> User { get; set; }
+        DbSet<UserEntity> User { get; set; }
 
-        DbSet<Customer> Customer { get; set; }
+        DbSet<CustomerEntity> Customer { get; set; }
 
-        DbSet<Invoice> Invoice { get; set; }
+        DbSet<InvoiceEntity> Invoice { get; set; }
 
-        DbSet<Product> Product { get; set; }
+        DbSet<ProductEntity> Product { get; set; }
 
-        DbSet<Tax> Tax { get; set; }
+        DbSet<TaxEntity> Tax { get; set; }
 
-        DbSet<CatStatus> CatStatus { get; set; }
+        DbSet<CatStatusEntity> CatStatus { get; set; }
 
-        DbSet<CatInvoiceStatus> CatInvoiceStatus { get; set; }
+        DbSet<CatInvoiceStatusEntity> CatInvoiceStatus { get; set; }
 
-        DbSet<CatInvoiceType> CatInvoiceType { get; set; }
+        DbSet<CatInvoiceTypeEntity> CatInvoiceType { get; set; }
 
-        DbSet<Product2Tax> Product2Tax { get; set; }
+        DbSet<Product2TaxEntity> Product2Tax { get; set; }
 
-        DbSet<CatAmbitType> CatAmbitType { get; set; }
+        DbSet<CatAmbitTypeEntity> CatAmbitType { get; set; }
 
-        DbSet<CatTaxType> CatTaxType { get; set; }
+        DbSet<CatTaxTypeEntity> CatTaxType { get; set; }
 
         #region Métodos que permiten realizar el CRUD
         DbSet<TEntity> Set<TEntity>() where TEntity : class;

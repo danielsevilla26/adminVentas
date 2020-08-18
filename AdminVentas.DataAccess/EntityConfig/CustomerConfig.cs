@@ -10,7 +10,7 @@ namespace AdminVentas.DataAccess.EntityConfig
         /// Método que crea una tabla y asigna sus propiedades
         /// </summary>
         /// <param name="entityBuilder">Entidad para configurar</param>
-        public static void SetEntityBuilder(EntityTypeBuilder<Customer> entityBuilder)
+        public static void SetEntityBuilder(EntityTypeBuilder<CustomerEntity> entityBuilder)
         {
             //Tabla a crear
             entityBuilder.ToTable("Customer");

@@ -10,7 +10,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdminVentas.Application.Contracts\AdminVentas.Application.Contracts.csproj" />
+    <ProjectReference Include="..\AdminVentas.Business\AdminVentas.Business.csproj" />
     <ProjectReference Include="..\AdminVentas.DataAccess.Contracts\AdminVentas.DataAccess.Contracts.csproj" />
+    <ProjectReference Include="..\AdminVentas.DataAccess\AdminVentas.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
